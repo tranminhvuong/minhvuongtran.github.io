@@ -1,6 +1,6 @@
 const socket = io('http://localhost:4000');
 const peer = new Peer({key: 'tkv5g2acaree9udi'});
-peer.on('open', id => socket.emit("myname1", id+ ","+name);
+peer.on('open', id => socket.emit("myname1", id+ ","+name));
 
 
 var pro = name;
@@ -45,7 +45,9 @@ else if(a.length ==5){
     });
 };
 else{
-
+    $('#nguoi-goi').show();
+    $('#nguoi-nhan').hide();
+    $('#cuoc-goi').hide();
 };
 
 
