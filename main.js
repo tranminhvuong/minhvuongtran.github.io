@@ -11,18 +11,20 @@ if(a.length == 4){
     $('#nguoi-goi').show();
     $('#nguoi-nhan').hide();
     $('#cuoc-goi').hide();
-    socket.on("server-send-id-callee", data )
-    openStream()
-    .then(stream => {
-        playStream('localStream', stream);
-        const call = peer.call(data, stream);
-        call.on('stream', remoteStream =>{
-            $('#nguoi-goi').hide();
-            $('#nguoi-nhan').hide();
-            $('#cuoc-goi').show();
-            playStream('remoteStream', remoteStream);
-        });
-    })
+    socket.on("server-send-id-callee", data => {
+        openStream()
+        .then(stream => {
+            playStream('localStream', stream);
+            const call = peer.call(data, stream);
+            call.on('stream', remoteStream =>{
+                $('#nguoi-goi').hide();
+                $('#nguoi-nhan').hide();
+                $('#cuoc-goi').show();
+                playStream('remoteStream', remoteStream);
+            });
+        })
+    });
+    
 }
 else if(a.length ==5){
     $('#nguoi-goi').hide();
