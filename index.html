@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-        <title>Khoa Pham WebRTC</title>
+        <title>Cuộc goi đang diễn ra</title>
         <script src="jquery.js"></script>
         <script src="peer.min.js"></script>
         <script src="socket.io.js"></script>
     </head>
     <body>
+       <div id = "nguoi-goi">
+           <label id="">ĐANG LIÊN HỆ</label>
+       </div>
+       <div id = "nguoi-nhan">
+            <label>Cuộc gọi đến từ <b id="goier"></b> </label>
+            <br /><br />
+            <button id = "btn-tra-loi">Trả lời</button>
+            <button id = "btn-tu-choi">Từ chối</button>
+       </div>
+       <div id ="cuoc-goi">
         <h3 id="my-peer">Your id: </h3>
         <br /><br />
-        <video id="localStream" width="300" controls></video>
+        
+        <video id="remoteStream" height="497px" style="margin-right: 30px; margin-left: 179px;" controls ></video>
+        <video id="localStream"  style="height: 178px;
+        bottom: 46px;
+        position: absolute;
+        right: 171px;
+        z-index: 1;" controls></video>
         <br /><br />
-        <video id="remoteStream" width="300" controls></video>
-        <br /><br />
-        <input type="text" id="remoteId" placeholder="Remote Id">
-        <button id="btnCall">Call</button>
+    </div>
     </body>
     <script src="main.js"></script>
 </html>
