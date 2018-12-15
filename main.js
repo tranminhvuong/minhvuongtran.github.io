@@ -23,7 +23,7 @@ if(a.length == 4){
             playStream('remoteStream', remoteStream);
         });
     })
-};
+}
 else if(a.length ==5){
     $('#nguoi-goi').hide();
     $('#nguoi-nhan').show();
@@ -43,12 +43,12 @@ else if(a.length ==5){
             })
         });
     });
-};
+}
 else{
     $('#nguoi-goi').show();
     $('#nguoi-nhan').hide();
     $('#cuoc-goi').hide();
-};
+}
 
 
 
