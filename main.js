@@ -1,5 +1,34 @@
 const socket = io('https://chat-do-an-mang.herokuapp.com');
-const peer = new Peer({key: 'peerjs', host: 'mypen.herokuapp.com',secure: true, port: 443});
+
+
+let customConfig;
+
+$.ajax({
+  url: "https://service.xirsys.com/ice",
+  data: {
+    ident: "minhvuonga31",
+    secret: "8b2a25f2-fca0-11e8-87ad-0242ac110003",
+    domain: "tranminhvuong.github.io",
+    application: "default",
+    room: "default",
+    secure: 1
+  },
+  success: function (data, status) {
+    // data.d is where the iceServers object lives
+    customConfig = data.d;
+    console.log(customConfig);
+  },
+  async: false
+});
+
+
+
+const peer = new Peer({
+    key: 'peerjs',
+     host: 'mypen.herokuapp.com',
+     secure: true, port: 443,
+     config: customConfig 
+    });
 peer.on('open', id => socket.emit("myname1", id+ ","+name));
 
 
@@ -55,7 +84,7 @@ else{
 
 
 function openStream(){
-    const config = { audio: false, video: true};
+    const config = { audio: true, video: true};
     return navigator.mediaDevices.getUserMedia(config);
 };
 
