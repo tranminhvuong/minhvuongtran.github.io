@@ -1,5 +1,5 @@
-const socket = io('http://localhost:4000');
-const peer = new Peer({key: 'tkv5g2acaree9udi'});
+const socket = io('https://chat-do-an-mang.herokuapp.com');
+const peer = new Peer({key: 'peerjs', host: 'mypee.herokuapp.com',secure: true, port: 443});
 peer.on('open', id => socket.emit("myname1", id+ ","+name));
 
 
