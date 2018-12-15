@@ -20,8 +20,8 @@ if(a.length == 4){
             $('#nguoi-goi').hide();
             $('#nguoi-nhan').hide();
             $('#cuoc-goi').show();
-            playStream('remoteStream', remoteStream));
-        };
+            playStream('remoteStream', remoteStream);
+        });
     })
 };
 else if(a.length ==5){
