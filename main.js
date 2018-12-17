@@ -4,14 +4,15 @@ const socket = io('https://chat-do-an-mang.herokuapp.com');
 let customConfig;
 
 $.ajax({
-  url: "https://service.xirsys.com/ice",
+  
+  url: "https://global.xirsys.net/ice/",
   data: {
     ident: "minhvuonga31",
-    secret: "8b2a25f2-fca0-11e8-87ad-0242ac110003",
+    secret: "f19f2808-01ca-11e9-9426-9bdeccc7fefa",
     domain: "tranminhvuong.github.io",
     application: "default",
     room: "default",
-    secure: 1
+    secure: true
   },
   success: function (data, status) {
     // data.d is where the iceServers object lives
