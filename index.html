@@ -5,6 +5,21 @@
         <script src="jquery.js"></script>
         <script src="peer.min.js"></script>
         <script src="socket.io.js"></script>
+        <script>
+            $( document ).ready( function () {
+            $.ajax ({
+             url: "https://global.xirsys.net/_turn/tranminhvuong.github.io/",
+             type: "PUT",
+             async: false,
+             headers: {
+               "Authorization": "Basic " + btoa("minhvuonga31:8b2a25f2-fca0-11e8-87ad-0242ac110003")
+             },
+             success: function (res){
+               console.log("ICE List: "+res.v.iceServers);
+             }
+           });
+        });
+  </script>
     </head>
     <body>
        <div id = "nguoi-goi">
