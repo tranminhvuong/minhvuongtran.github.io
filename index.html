@@ -5,20 +5,21 @@
         <script src="jquery.js"></script>
         <script src="peer.min.js"></script>
         <script src="socket.io.js"></script>
-        <script>
-            $( document ).ready( function () {
-            $.ajax ({
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script>
+     $( document ).ready( function () {
+         $.ajax ({
              url: "https://global.xirsys.net/_turn/tranminhvuong.github.io/",
              type: "PUT",
              async: false,
              headers: {
-               "Authorization": "Basic " + btoa("minhvuonga31:8b2a25f2-fca0-11e8-87ad-0242ac110003")
+               "Authorization": "Basic " + btoa("minhvuonga31:f19f2808-01ca-11e9-9426-9bdeccc7fefa")
              },
              success: function (res){
                console.log("ICE List: "+res.v.iceServers);
              }
-           });
-        });
+         });
+     })
   </script>
     </head>
     <body>
